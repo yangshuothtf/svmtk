@@ -1,0 +1,39 @@
+yangshuo@yangshuo-t420:~/svm_light_tk/svm_new_2020.4.3/svmlightnew/svmlightnew$ diff svm_learn.c ~/svm_light_tk/svm_new/
+yangshuo@yangshuo-t420:~/svm_light_tk/svm_new_2020.4.3/svmlightnew/svmlightnew$ diff tree_kernel.c ~/svm_light_tk/svm_new/
+yangshuo@yangshuo-t420:~/svm_light_tk/svm_new_2020.4.3/svmlightnew/svmlightnew$ diff semantic_kernel.c ~/svm_light_tk/svm_new/
+224c224
+<     double result=0,resulta=0, resultb=0, resultc = 0;
+---
+>     double result = 0;
+229,230d228
+<             resulta += (a->semanticVector->values[i]) * (a->semanticVector->values[i]);
+<             resultb += (b->semanticVector->values[i]) * (b->semanticVector->values[i]);
+236,249c234
+<     resultc = sqrt(resulta*resultb);
+<     if (resulta != 0 && resultb != 0) {
+<         resultc = sqrt(resulta*resultb);
+<     }
+<     else {
+<         result = 0;
+<     }
+<     if (resultc != 0) {
+<         result = (result / resultc-0.9)*10;
+<     }
+<     else {
+<         result = 0;
+<     }
+<     return result;
+---
+>     return result/10000;  // yangshuo: hard-coded???????
+yangshuo@yangshuo-t420:~/svm_light_tk/svm_new_2020.4.3/svmlightnew/svmlightnew$ diff svm_learn_main.c ~/svm_light_tk/svm_new/
+225c225
+<   kernel_parm->rbf_gamma=1.0;
+---
+>   kernel_parm->rbf_gamma = 1.0;
+yangshuo@yangshuo-t420:~/svm_light_tk/svm_new_2020.4.3/svmlightnew/svmlightnew$ diff svm_common.c ~/svm_light_tk/svm_new/
+73c73
+<             return((CFLOAT)exp(-kernel_parm->rbf_gamma*(a->twonorm_sq-2*sprod(a,b)+b->twonorm_sq)));
+---
+>         return((CFLOAT)exp(-kernel_parm->rbf_gamma*(a->twonorm_sq-2*sprod(a,b)+b->twonorm_sq)));
+yangshuo@yangshuo-t420:~/svm_light_tk/svm_new_2020.4.3/svmlightnew/svmlightnew$
+

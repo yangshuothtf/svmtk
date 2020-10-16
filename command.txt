@@ -1,0 +1,49 @@
+======================只要原始词汇核=============================================
+./svm_learn -t 0 project.out.step7.txt project.out.step7.t0.model
+======================只要原始词汇核用rbf =======================================
+./svm_learn -t 2 project.out.step7.txt project.out.step7.t2.model
+======================只要semantic_kernel========================================
+./svm_learn -t 5 -C S -S 0 project.out.step7.txt project.out.step7.semantic.model
+======================只要树核里的词汇核--linear vector==========================
+./svm_learn -t 5 -C V -S 0 project.out.step7.1.txt project.out.step7.1.vector.model
+======================只要树核===================================================
+./svm_learn -t 5 project.out.step7.txt project.out.step7.model
+./svm_learn -t 5 project.out.step7.123.txt project.out.step7.model
+
+~/svm_light_tk/svm_new_2020.4.3/svmlightnew/svmlightnew
+1.line vector
+./svm_learn -t 5 -C V -S 0 project.out.step8.group123.1.txt project.out.step8.group123.1.linevector.model
+./svm_learn -t 5 -C V -S 0 project.out.step8.group123.2.txt project.out.step8.group123.2.linevector.model
+./svm_learn -t 5 -C V -S 0 project.out.step8.group123.3.txt project.out.step8.group123.3.linevector.model
+
+
+2.semantic kernel
+./svm_learn -t 5 -C S -S 0 project.out.step8.group123.1.txt project.out.step8.group123.1.semantic.model
+./svm_learn -t 5 -C S -S 0 project.out.step8.group123.2.txt project.out.step8.group123.2.semantic.model
+//3没结果
+./svm_learn -t 5 -C S -S 0 project.out.step8.group123.3.txt project.out.step8.group123.3.semantic.model
+./svm_learn -t 5 -C S -S 0 project.out.step8.group456.4.txt project.out.step8.group456.4.semantic.model
+./svm_learn -t 5 -C S -S 0 project.out.step8.group456.5.txt project.out.step8.group456.5.semantic.model
+./svm_learn -t 5 -C S -S 0 project.out.step8.group456.6.txt project.out.step8.group456.6.semantic.model
+./svm_learn -t 5 -C S -S 0 project.out.step8.group789.7.txt project.out.step8.group789.7.semantic.model
+./svm_learn -t 5 -C S -S 0 project.out.step8.group789.8.txt project.out.step8.group789.8.semantic.model
+./svm_learn -t 5 -C S -S 0 project.out.step8.group789.9.txt project.out.step8.group789.9.semantic.model
+
+./svm_learn -t 5 -C S -S 0 project.out.step7.txt project.out.step7.semantic.model
+
+./svm_learn -t 5 -C S -S 0 project.out.step8.group123.1.train.txt project.out.step8.group123.1.semantic.model
+./svm_classify -v 2 project.out.step8.group123.1.test.txt project.out.step8.group123.1.semantic.model project.out.step8.group123.1.output.txt
+./svm_learn -t 5 -C S -S 0 project.out.step8.group456.4.train.txt project.out.step8.group456.4.semantic.model
+./svm_classify -v 2 project.out.step8.group456.4.test.txt project.out.step8.group456.4.semantic.model project.out.step8.group456.4.output.txt
+
+
+3.rbf kernel
+./svm_learn -t 2 project.out.step8.group123.1.txt project.out.step8.group123.1.rbf.model
+./svm_learn -t 2 project.out.step8.group123.2.txt project.out.step8.group123.2.rbf.model
+./svm_learn -t 2 project.out.step8.group123.3.txt project.out.step8.group123.3.rbf.model
+
+4.tree kernel
+./svm_learn -t 5 project.out.step8.group123.1.txt project.out.step8.group123.1.tree.model
+./svm_learn -t 5 project.out.step8.group123.2.txt project.out.step8.group123.2.tree.model
+./svm_learn -t 5 project.out.step8.group123.3.txt project.out.step8.group123.3.tree.model
+
