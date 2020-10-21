@@ -1,12 +1,12 @@
-======================ֻҪԭʼ�ʻ��=============================================
+======================只要原始词汇核=============================================
 ./svm_learn -t 0 project.out.step7.txt project.out.step7.t0.model
-======================ֻҪԭʼ�ʻ����rbf =======================================
+======================只要原始词汇核用rbf =======================================
 ./svm_learn -t 2 project.out.step7.txt project.out.step7.t2.model
-======================ֻҪsemantic_kernel========================================
+======================只要semantic_kernel========================================
 ./svm_learn -t 5 -C S -S 0 project.out.step7.txt project.out.step7.semantic.model
-======================ֻҪ������Ĵʻ��--linear vector==========================
+======================只要树核里的词汇核--linear vector==========================
 ./svm_learn -t 5 -C V -S 0 project.out.step7.1.txt project.out.step7.1.vector.model
-======================ֻҪ����===================================================
+======================只要树核===================================================
 ./svm_learn -t 5 project.out.step7.txt project.out.step7.model
 ./svm_learn -t 5 project.out.step7.123.txt project.out.step7.model
 
@@ -20,7 +20,7 @@
 2.semantic kernel
 ./svm_learn -t 5 -C S -S 0 project.out.step8.group123.1.txt project.out.step8.group123.1.semantic.model
 ./svm_learn -t 5 -C S -S 0 project.out.step8.group123.2.txt project.out.step8.group123.2.semantic.model
-//3û���
+//3没结果
 ./svm_learn -t 5 -C S -S 0 project.out.step8.group123.3.txt project.out.step8.group123.3.semantic.model
 ./svm_learn -t 5 -C S -S 0 project.out.step8.group456.4.txt project.out.step8.group456.4.semantic.model
 ./svm_learn -t 5 -C S -S 0 project.out.step8.group456.5.txt project.out.step8.group456.5.semantic.model
@@ -33,8 +33,22 @@
 
 ./svm_learn -t 5 -C S -S 0 project.out.step8.group123.1.train.txt project.out.step8.group123.1.semantic.model
 ./svm_classify -v 2 project.out.step8.group123.1.test.txt project.out.step8.group123.1.semantic.model project.out.step8.group123.1.output.txt
+./svm_learn -t 5 -C S -S 0 project.out.step8.group123.2.train.txt project.out.step8.group123.2.semantic.model
+./svm_classify -v 2 project.out.step8.group123.2.test.txt project.out.step8.group123.2.semantic.model project.out.step8.group123.2.output.txt
+./svm_learn -t 5 -C S -S 0 project.out.step8.group123.3.train.txt project.out.step8.group123.3.semantic.model
+./svm_classify -v 2 project.out.step8.group123.3.test.txt project.out.step8.group123.3.semantic.model project.out.step8.group123.3.output.txt
 ./svm_learn -t 5 -C S -S 0 project.out.step8.group456.4.train.txt project.out.step8.group456.4.semantic.model
 ./svm_classify -v 2 project.out.step8.group456.4.test.txt project.out.step8.group456.4.semantic.model project.out.step8.group456.4.output.txt
+./svm_learn -t 5 -C S -S 0 project.out.step8.group456.5.train.txt project.out.step8.group456.5.semantic.model
+./svm_classify -v 2 project.out.step8.group456.5.test.txt project.out.step8.group456.5.semantic.model project.out.step8.group456.5.output.txt
+./svm_learn -t 5 -C S -S 0 project.out.step8.group456.6.train.txt project.out.step8.group456.6.semantic.model
+./svm_classify -v 2 project.out.step8.group456.6.test.txt project.out.step8.group456.6.semantic.model project.out.step8.group456.6.output.txt
+./svm_learn -t 5 -C S -S 0 project.out.step8.group789.7.train.txt project.out.step8.group789.7.semantic.model
+./svm_classify -v 2 project.out.step8.group789.7.test.txt project.out.step8.group789.7.semantic.model project.out.step8.group789.7.output.txt
+./svm_learn -t 5 -C S -S 0 project.out.step8.group789.8.train.txt project.out.step8.group789.8.semantic.model
+./svm_classify -v 2 project.out.step8.group789.8.test.txt project.out.step8.group789.8.semantic.model project.out.step8.group789.8.output.txt
+./svm_learn -t 5 -C S -S 0 project.out.step8.group789.9.train.txt project.out.step8.group789.9.semantic.model
+./svm_classify -v 2 project.out.step8.group789.9.test.txt project.out.step8.group789.9.semantic.model project.out.step8.group789.9.output.txt
 
 
 3.rbf kernel
